@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'components/expandable_fab/expandable_fab.dart';
+import 'components/credit/credit.dart';
 import 'components/expandable_fab/action_button.dart';
+import 'components/expandable_fab/expandable_fab.dart';
 import 'components/home/home.dart';
 
 void main() {
@@ -40,12 +41,18 @@ class App extends StatelessWidget {
           ),
           ActionButton(
               color: Colors.blue,
-              icon: const Icon(Icons.fastfood_rounded, color: Colors.white),
-              onPressed: () => () {},
+              icon: const Icon(Icons.credit_card_rounded, color: Colors.white),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Credit()),
+                );
+              },
               size: 40.0),
           ActionButton(
             color: Colors.green,
-            icon: const Icon(Icons.money, color: Colors.white),
+            icon: const Icon(Icons.account_balance_wallet_rounded,
+                color: Colors.white),
             onPressed: () => () {},
           ),
         ],
