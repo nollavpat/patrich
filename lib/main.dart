@@ -14,32 +14,13 @@ void main() {
 }
 
 class App extends StatelessWidget {
-  static const _actionTitles = ['Create Post', 'Upload Photo', 'Upload Video'];
-
   const App({super.key});
-
-  void _showAction(BuildContext context, int index) {
-    showDialog<void>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          content: Text(_actionTitles[index]),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('CLOSE'),
-            ),
-          ],
-        );
-      },
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Patrich'),
+        title: const Text('PatRich'),
       ),
       body: ListView.builder(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -52,16 +33,20 @@ class App extends StatelessWidget {
         distance: 112.0,
         children: [
           ActionButton(
-            onPressed: () => _showAction(context, 0),
-            icon: const Icon(Icons.format_size),
+            color: Colors.amber,
+            icon: const Icon(Icons.format_list_numbered_rounded,
+                color: Colors.white),
+            onPressed: () => () {},
           ),
           ActionButton(
-            onPressed: () => _showAction(context, 1),
-            icon: const Icon(Icons.insert_photo),
-          ),
+              color: Colors.blue,
+              icon: const Icon(Icons.fastfood_rounded, color: Colors.white),
+              onPressed: () => () {},
+              size: 40.0),
           ActionButton(
-            onPressed: () => _showAction(context, 2),
-            icon: const Icon(Icons.videocam),
+            color: Colors.green,
+            icon: const Icon(Icons.money, color: Colors.white),
+            onPressed: () => () {},
           ),
         ],
       ),
